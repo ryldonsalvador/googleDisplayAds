@@ -1,7 +1,147 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+	<head> 
+	<title></title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="ad.size" content="width=300,height=600">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_2.0.1_min.js"></script>
+</head>
+<style type="text/css">
+@charset "utf-8";
+/* CSS Document */
+body {
+    background: #fff;
+    margin: 0 auto;
+    padding: 0;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}  
+#main_div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 300px;
+    height: 600px;
+    /*height: 3700px;*/
+    padding: 0;
+    margin: 0;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: none;
+    cursor: pointer;
+}
+#logo{
+    position: absolute;
+    top: 35px;
+    right: 0;left: 0;margin: auto;
+}
+#cta{
+    position: absolute;
+    bottom: 30px;
+    width: auto;
+    left:0;right: 0;
+    margin: auto;
+    -webkit-transform: translateY(50px);
+    -moz-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+}
+.products{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 215px;
+    width: auto;
+    -webkit-transform: translateX(-30px);
+    -moz-transform: translateX(-30px);
+    transform: translateX(-30px);
+}
+#can1{
+    opacity: 1;
+}
+#can2,#can3,#can4,#can5{
+    opacity: 0;
+}
+#text1{
+    position: absolute;
+    opacity: 1;
+    top: 100px;
+    left: 0;right: 0;margin:auto;
+}
+#text2{
+    position: absolute;
+    opacity: 0;
+    top: 100px;
+    left: 0;right: 0;margin:auto;
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    transform: translateY(20px);
+}
+a{
+    width: 300px;
+    height: 600px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+#bg{
+    width: 300px; height: 600px;
+    position: absolute;
+    top: 0; left: 0;
+    background: url(images/bg.jpg);
+}
+</style>
+<body onload="init();">
+	<div id="main_div">
+        <div id="bg"></div>
+        <img id="logo" src="images/logo.png" />
+        <img id="text1" src="images/text1.png" />
+        <img id="text2" src="images/text2.png" />
+        <img id="can1" class="products" src="images/can1.png" />
+        <img id="can2" class="products" src="images/can2.png" />
+        <img id="can3" class="products" src="images/can3.png" />
+        <img id="can4" class="products" src="images/can4.png" />
+        <img id="can5" class="products" src="images/can5.png" />
+        <img id="cta" src="images/cta.png" />
+        <a href="javascript:window.open(window.clickTag)"></a>
+    </div>
+    <script type="text/javascript">
+         var $ = function(slt) {
+             return document.querySelector(slt);
+        };
+        var clickTag = "https://www.google.com";
+        function init() {
+            TweenLite.set($('#main_div'),{display:"block"});
+            animate();
+        }
+        function animate() {
+            TweenMax.to($('#text1'),.5,{delay:2,opacity:0,ease: Power4.easeOut})
+            TweenMax.to($('#text2'),.5,{delay:2.5,opacity:1,y:0,ease: Power4.easeOut})
+
+            TweenMax.to($('#cta'),.5,{opacity:1,y:0,ease: Power4.easeOut})
+
+            // cans animations
+            TweenMax.to($('#can1'),.5,{x:0,ease: Power4.easeOut})
+            TweenMax.to($('#can1'),.2,{x:50,delay:1,opacity:0,ease: Power2.easeOut})
+
+            TweenMax.to($('#can2'),.2,{delay:1.5,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#can2'),.2,{x:50,delay:2.5,opacity:0,ease: Power2.easeOut})
+
+            TweenMax.to($('#can3'),.2,{delay:3,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#can3'),.2,{x:50,delay:4,opacity:0,ease: Power2.easeOut})
+
+            TweenMax.to($('#can4'),.2,{delay:4.5,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#can4'),.2,{x:50,delay:5.5,opacity:0,ease: Power2.easeOut})
+
+            TweenMax.to($('#can5'),.2,{delay:6,opacity:1,x:0,ease: Power4.easeNone})
+        }
+    </script>
 </body>
 </html>
