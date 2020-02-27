@@ -92,15 +92,22 @@ a{
     cursor: pointer;
 }
 #bg{
-    width: 300px; height: 600px;
+    /*width: 300px; height: 600px;*/
     position: absolute;
     top: 0; left: 0;
-    background: url(images/bg.jpg);
+}
+#dynamicBg{
+    position: absolute;
+    top: 0; left: 0;   
+    background-color: #f07e26; 
+    width: 300px; height: 600px;
 }
 </style>
 <body onload="init();">
 	<div id="main_div">
-        <div id="bg"></div>
+        <!-- <div id="bg"></div> -->
+        <div id="dynamicBg"></div>
+        <img id="bg" src="images/bg.png" />
         <img id="logo" src="images/logo.png" />
         <img id="text1" src="images/text1.png" />
         <img id="text2" src="images/text2.png" />
@@ -132,15 +139,20 @@ a{
             TweenMax.to($('#can1'),.2,{x:50,delay:1,opacity:0,ease: Power2.easeOut})
 
             TweenMax.to($('#can2'),.2,{delay:1.5,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#dynamicBg'),.2,{delay:1.5,backgroundColor:'#ffb9c5',ease: Power4.easeNone})
             TweenMax.to($('#can2'),.2,{x:50,delay:2.5,opacity:0,ease: Power2.easeOut})
 
             TweenMax.to($('#can3'),.2,{delay:3,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#dynamicBg'),.2,{delay:3,backgroundColor:'#ffb399',ease: Power2.easeOut})
             TweenMax.to($('#can3'),.2,{x:50,delay:4,opacity:0,ease: Power2.easeOut})
 
             TweenMax.to($('#can4'),.2,{delay:4.5,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#dynamicBg'),.2,{delay:4.5,backgroundColor:'#decf43',ease: Power2.easeOut})
             TweenMax.to($('#can4'),.2,{x:50,delay:5.5,opacity:0,ease: Power2.easeOut})
 
             TweenMax.to($('#can5'),.2,{delay:6,opacity:1,x:0,ease: Power4.easeNone})
+            TweenMax.to($('#dynamicBg'),.2,{delay:6,backgroundColor:'#5e9865',ease: Power2.easeOut})
+            
         }
     </script>
 </body>
